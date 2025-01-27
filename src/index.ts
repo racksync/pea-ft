@@ -48,7 +48,7 @@ export default {
 
       // Get the current period
       const period = getCurrentMonthPeriod();
-      const year = new Date().getFullYear();
+      const year = new Date().getFullYear() + 543; // Convert to Buddhist year
       const timestamp = Math.floor((Date.now() + 7 * 60 * 60 * 1000) / 1000); // Adjust to UTC+7
 
       // Return the FT value, period, year, and timestamp as JSON
