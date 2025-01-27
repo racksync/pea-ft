@@ -19,11 +19,11 @@ async function sendTelegramNotification(message: string) {
 function getCurrentMonthPeriod(): string {
   const month = new Date().getMonth() + 1; // getMonth() returns 0-11
   if (month >= 1 && month <= 4) {
-    return 'JAN-APR';
+    return 'มกราคม-เมษายน';
   } else if (month >= 5 && month <= 8) {
-    return 'MAY-AUG';
+    return 'พฤษภาคม-สิงหาคม';
   } else {
-    return 'SEP-DEC';
+    return 'กันยายน-ธันวาคม';
   }
 }
 
