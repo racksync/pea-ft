@@ -1,8 +1,9 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import * as dotenv from 'dotenv';
+// Remove dotenv import
+// import * as dotenv from 'dotenv';
 
-dotenv.config();
+// dotenv.config();
 
 async function sendTelegramNotification(message: string) {
   const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
