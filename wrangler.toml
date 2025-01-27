@@ -1,6 +1,8 @@
 name = "pea-ft"
 main = "src/index.ts"
 compatibility_date = "2025-01-27"
+workers_dev = true
 
 [triggers]
-crons = [ "1 * * * *" ]
+crons = ["*/5 * * * *"] # Runs every 5 minutes
+
