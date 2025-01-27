@@ -46,13 +46,13 @@ export default {
         return new Response('FT value is unknown, null, or incorrect.', { status: 500 });
       }
 
-      // Get the current month period
-      const month = getCurrentMonthPeriod();
+      // Get the current period
+      const period = getCurrentMonthPeriod();
       const year = new Date().getFullYear();
       const timestamp = Math.floor((Date.now() + 7 * 60 * 60 * 1000) / 1000); // Adjust to UTC+7
 
-      // Return the FT value, month, year, and timestamp as JSON
-      return new Response(JSON.stringify({ ftValue, month, year, timestamp }), {
+      // Return the FT value, period, year, and timestamp as JSON
+      return new Response(JSON.stringify({ ftValue, period, year, timestamp }), {
         headers: { 'Content-Type': 'application/json' },
       });
     } catch (error) {
