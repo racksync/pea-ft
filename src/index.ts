@@ -49,9 +49,10 @@ export default {
       // Get the current month period
       const month = getCurrentMonthPeriod();
       const year = new Date().getFullYear();
+      const timestamp = Math.floor(Date.now() / 1000); // Get current timestamp in epoch
 
-      // Return the FT value, month, and year as JSON
-      return new Response(JSON.stringify({ ftValue, month, year }), {
+      // Return the FT value, month, year, and timestamp as JSON
+      return new Response(JSON.stringify({ ftValue, month, year, timestamp }), {
         headers: { 'Content-Type': 'application/json' },
       });
     } catch (error) {
