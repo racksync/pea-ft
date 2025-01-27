@@ -52,7 +52,7 @@ This project fetches the FT (Fuel Tariff) value from the PEA (Provincial Electri
 
 To configure the worker schedule interval, update the `wrangler.toml` file. For example, to run the worker every 5 minutes, set the schedule as follows:
 ```toml
-[[triggers.crons]]
+[triggers.crons]
 schedule = "*/5 * * * *"
 ```
 
