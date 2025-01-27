@@ -1,6 +1,11 @@
+# Exclude
 node_modules/
 dist/
 .env
 .DS_Store
 .wrangler
+src/*.ts
+
+# Include
+!src/index.ts
 !default.env
