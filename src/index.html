@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FT Value</title>
+</head>
+<body>
+  <h1>FT Value for Electrical Calculation</h1>
+  <p>Current FT Value: <span id="ft-value">Loading...</span></p>
+
+  <script>
+    // Fetch data from the Worker
+    fetch('https://pea-ft.racksync-cf.workers.dev/')
+      .then(response => response.json())
+      .then(data => {
+        // Display the FT value
+        document.getElementById('ft-value').textContent = data.ftValue;
+      })
+      .catch(error => {
+        console.error('Error fetching FT value:', error);
+        document.getElementById('ft-value').textContent = 'Failed to load FT value';
+      });
+  </script>
+</body>
+</html>'
