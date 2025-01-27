@@ -15,18 +15,23 @@ This project fetches the FT (Fuel Tariff) value from the PEA (Provincial Electri
     npm install
     ```
 
-3. Create a `.env` file and add your Telegram credentials:
+3. Create a `default.env` file and add your Telegram credentials:
     ```plaintext
     TELEGRAM_BOT_TOKEN=your_telegram_bot_token
     TELEGRAM_CHAT_ID=your_telegram_chat_id
     ```
 
-4. Build the project:
+4. Rename `default.env` to `.env`:
+    ```sh
+    mv default.env .env
+    ```
+
+5. Build the project:
     ```sh
     npm run build
     ```
 
-5. Run the project locally:
+6. Run the project locally:
     ```sh
     npm start
     ```
