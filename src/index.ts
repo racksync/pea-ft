@@ -49,7 +49,7 @@ export default {
       // Get the current month period
       const month = getCurrentMonthPeriod();
       const year = new Date().getFullYear();
-      const timestamp = Math.floor(Date.now() / 1000); // Get current timestamp in epoch
+      const timestamp = Math.floor((Date.now() + 7 * 60 * 60 * 1000) / 1000); // Adjust to UTC+7
 
       // Return the FT value, month, year, and timestamp as JSON
       return new Response(JSON.stringify({ ftValue, month, year, timestamp }), {
