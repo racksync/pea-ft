@@ -16,6 +16,17 @@ async function sendTelegramNotification(message: string) {
   });
 }
 
+function getCurrentMonthPeriod(): string {
+  const month = new Date().getMonth() + 1; // getMonth() returns 0-11
+  if (month >= 1 && month <= 4) {
+    return 'JAN-APR';
+  } else if (month >= 5 && month <= 8) {
+    return 'MAY-AUG';
+  } else {
+    return 'SEP-DEC';
+  }
+}
+
 export default {
   async fetch(request: Request, env: any, ctx: ExecutionContext): Promise<Response> {
     try {
@@ -35,8 +46,12 @@ export default {
         return new Response('FT value is unknown, null, or incorrect.', { status: 500 });
       }
 
-      // Return the FT value as JSON
-      return new Response(JSON.stringify({ ftValue }), {
+      // Get the current month period
+      const month = getCurrentMonthPeriod();
+      const year = new Date().getFullYear();
+
+      // Return the FT value, month, and year as JSON
+      return new Response(JSON.stringify({ ftValue, month, year }), {
         headers: { 'Content-Type': 'application/json' },
       });
     } catch (error) {
